@@ -21,8 +21,8 @@ Following codes developed the basic risidual model.(x denotes the input data ,M 
         
 The whole module 
 
-
 class Net(nn.Module):
+
     def __init__(self):
         super(Net, self).__init__()
         self.conv1 = nn.Conv2d(3,chM/2,3,padding=1)
