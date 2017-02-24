@@ -20,14 +20,13 @@ Following codes developed the basic risidual model.(x denotes the input data ,M 
         
         
 The whole module 
-  
-  class Net(nn.Module):
+
+
+class Net(nn.Module):
     def __init__(self):
         super(Net, self).__init__()
-        #self.conv1 = nn.Conv2d(3, chM/2, 3)  # 1 input image channel, 6 output channels, 5x5 square convolution kernel
         self.conv1 = nn.Conv2d(3,chM/2,3,padding=1)
         self.conv2 = nn.Conv2d(chM/2, chM, 3,padding=1)
-
         self.fc1 = nn.Linear(60*60*chN, 100*chN)  # an affine operation: y = Wx + b
         self.fc2 = nn.Linear(100*chN, 100)
         self.fc3 = nn.Linear(100,14)
@@ -92,9 +91,3 @@ The whole module
         return num_features
         
         
-
-        
-        
-        
-        
-     
