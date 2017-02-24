@@ -6,6 +6,8 @@ Because I don't have a powerful machine I just reduce the scale of the model to 
 
 Following codes developed the basic risidual model.(x denotes the input data ,M denotes the input channels,N denotes the ouput channels)
 
+
+
   def Residual(self,x,M,N):
  
         c=x
