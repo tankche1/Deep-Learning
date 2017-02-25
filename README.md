@@ -2,10 +2,10 @@
 
 I implement a simpler module of Stacked Hourglass using pytorch.
 The code contain the process of loading data from .mat and the whole training parts.
-Because I don't have a powerful machine I just reduce the scale of the model to test it on my computer.
+Because I don't have a powerful machine so I just reduce the scale of the model to test it on my computer and make sure it can run without error on my CPU.
 
 Following codes developed the basic risidual model.(x denotes the input data ,M denotes the input channels,N denotes the ouput channels)
-
+The whole model contain conv,maxpool,fully-conected layer,relu and upsampling.
 
 
   def Residual(self,x,M,N):
@@ -91,3 +91,13 @@ class Net(nn.Module):
         return num_features
         
         
+ I used SGD to train the model.
+ The optimizer is set by one line of code:(Learning rate = 0.01 ,momentum=0.5) 
+       
+       optimizer = optim.SGD(net.parameters(), lr=0.01,momentum=0.5)
+
+For the loss function ,I used MSEloss.
+If some human parts are occuluded,the module is train to output coordinate(0,0)
+        
+        criterion=nn.MSELoss()
+
